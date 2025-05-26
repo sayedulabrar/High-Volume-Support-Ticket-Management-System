@@ -73,9 +73,27 @@ php artisan key:generate
 ### Update the `.env` with your MySQL database credentials:
 
 ```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
 DB_DATABASE=support_ticket_system
 DB_USERNAME=your_mysql_username
 DB_PASSWORD=your_mysql_password
+
+APP_URL=http://127.0.0.1:8000
+FRONTEND_URL=http://localhost:5173
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.mailtrap.io           # or your SMTP provider (e.g., smtp.gmail.com)
+MAIL_PORT=2525                       # or 587/465 depending on provider
+MAIL_USERNAME=your_mail_username
+MAIL_PASSWORD=your_mail_password
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=no-reply@yourdomain.com
+MAIL_FROM_NAME="Support Ticket System"
+
+
+
 ```
 
 ### Run database seeders (creates roles and users):
