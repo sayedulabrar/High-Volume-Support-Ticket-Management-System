@@ -1,6 +1,3 @@
----
-
-```markdown
 # Support Ticket System
 
 This project is a full-stack Support Ticket System built with **Laravel (API backend)** and **React (frontend)**.
