@@ -1,5 +1,80 @@
 # Support Ticket System
 
+# Core Features
+
+## 1. Authentication & Role Management
+
+* Use Laravel Breeze or others.
+* Roles:
+
+  * Customer
+  * Support Agent
+  * Admin
+* Use `spatie/laravel-permission` or Laravel Gates/Policies.
+* Admin can assign roles to users.
+
+## 2. Ticket Management
+
+* Customers can create support tickets:
+
+  * Fields:
+
+    * Subject
+    * Category
+    * Priority
+    * Description
+    * File Attachments
+* Statuses:
+
+  * Open
+  * In Progress
+  * Resolved
+  * Closed
+* Tickets table includes:
+
+  * `user_id`
+  * `assigned_to`
+  * `status`
+  * `priority`
+  * etc.
+
+## 3. Ticket Reply System
+
+* Table: `ticket_replies`
+* Replies stored as thread under each ticket.
+* Both customers and agents can reply.
+* Attachments optional.
+* Display in a clean chat-like view (UI framework optional).
+
+## 4. Email Notifications (Laravel Mail)
+
+* Send email on:
+
+  * Ticket creation (to customer & agents)
+  * New replies (to the other party)
+* Use Laravel Mailable classes.
+* All emails must be queued using Laravel Queues.
+
+## 5. Queued Jobs (Laravel Queues)
+
+* Configure Redis or database queue.
+* Queue:
+
+  * Email notifications
+  * Future scheduled tasks (optional)
+
+## 6. Admin Dashboard
+
+* View and filter all tickets.
+* Assign tickets to agents.
+* View and manage users & roles.
+
+## 7. Real-time Ticket Replies (Laravel + React Query)
+
+* Enable real-time reply updates.
+* Notify customers and agents when a new message is added (use same mechanism as Step 5).
+
+
 This project is a full-stack Support Ticket System built with **Laravel (API backend)** and **React (frontend)**.
 
 ## 📁 Project Structure
